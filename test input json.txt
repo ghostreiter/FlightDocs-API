@@ -12,4 +12,18 @@
 	    "LogHours":100,
 		"IntervalMonths":12,
 		"IntervalHours":500
+    }, {
+        "ItemNumber":3,
+        "Desc":"Item 3",
+		"LogDate": "2018-06-01T00:00:00",
+	    "LogHours":150,
+		"IntervalMonths":null,
+		"IntervalHours":400
+    }, {
+        "ItemNumber":4,
+        "Desc":"Item 4",
+		"LogDate": "2018-06-01T00:00:00",
+	    "LogHours":150,
+		"IntervalMonths":6,
+		"IntervalHours":null
     }]

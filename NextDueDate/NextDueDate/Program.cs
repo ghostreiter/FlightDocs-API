@@ -51,7 +51,10 @@ namespace NextDueDate
                         if(inputs.fDTasks.Count > 0){
                             List<FDTask> outputs = new List<FDTask>();
                             int index = 0;
-                            Aircraft test = sample[inputs.aircraftID - 1];
+
+                            int x = inputs.aircraftID - 1;
+
+                            Aircraft test = sample[x];
 
                             foreach (FDTask task in inputs.fDTasks){
                                 outputs.Add(NextDueDate(task, test));
