@@ -5,6 +5,7 @@ using System.Text;
 using NextDueDate.Models;
 using Newtonsoft.Json;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace NextDueDate
 {
@@ -47,27 +48,26 @@ namespace NextDueDate
 
                         IO inputs = JsonConvert.DeserializeObject<IO>(message);
 
-                        //if(inputs.fDTasks.Length > 0){
-                            FDTask outputs = new FDTask();
+                        if(inputs.fDTasks.Count > 0){
+                            List<FDTask> outputs = new List<FDTask>();
                             int index = 0;
-                            //foreach (FDTask t in inputs.fDTasks)
-                            //{
-                        outputs = NextDueDate(inputs.fDTasks, sample[inputs.aircraftID-1]);
-                            //    index++;
-                            //}
+                            Aircraft test = sample[inputs.aircraftID - 1];
+
+                            foreach (FDTask task in inputs.fDTasks){
+                                outputs.Add(NextDueDate(task, test));
+                                index++;
+                            }
 
                             IO outputObject = new IO();
                             outputObject.aircraftID = inputs.aircraftID;
                             outputObject.fDTasks = outputs;
                             response = JsonConvert.SerializeObject(outputObject);
                             Console.WriteLine(response);
-                        //}
-                        //else{
-                            //Console.WriteLine("Input length is 0");
-                          //  response = "Input length is 0";
-
-                        //}
-
+                        }
+                        else{
+                            Console.WriteLine("Input length is 0");
+                            response = "Input length is 0";
+                        }
                     }
                     catch (Exception e)
                     {

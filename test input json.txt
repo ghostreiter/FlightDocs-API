@@ -1,0 +1,15 @@
+	[{
+        "ItemNumber":1,
+        "Desc":"Item 1",
+		"LogDate": "2018-04-07T00:00:00",
+	    "LogHours":null,
+		"IntervalMonths":null,
+		"IntervalHours":null
+    }, {
+        "ItemNumber":2,
+        "Desc":"Item 2",
+		"LogDate": "2018-04-07T00:00:00",
+	    "LogHours":100,
+		"IntervalMonths":12,
+		"IntervalHours":500
+    }]

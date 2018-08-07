@@ -30,13 +30,12 @@ namespace FDAPI.Controllers
 
         // POST aircraft/duelist/1
         [HttpPost("{id}/duelist")]
-        public string Post(int id, [FromBody]FDTask value){
+        public string Post(int id, [FromBody]List<FDTask> value){
             IO input = new IO();
             input.aircraftID = id;
 
-            FDTask theTasks = value;
+            List<FDTask> theTasks = value;
             input.fDTasks = theTasks;
-            //string forQueue = 
 
             string toSend = JsonConvert.SerializeObject(input);
 
